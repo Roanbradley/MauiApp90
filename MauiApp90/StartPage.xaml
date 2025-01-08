@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp90.StartPage"  
+             BackgroundImageSource="startgame.png"
+             BackgroundColor="Black"
+             Padding="0">
+
+    <!-- Grid Layout to position elements -->
+    <Grid Padding="30">
+
+        <!-- Row definitions to control where content goes -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <!-- Occupy all remaining space -->
+            <RowDefinition Height="Auto"/>
+            <!-- Auto-size for the button -->
+        </Grid.RowDefinitions>
+
+        <!-- StackLayout for the arrows, image, and label -->
+        <StackLayout HorizontalOptions="Center" 
+                     VerticalOptions="Center" 
+                     Spacing="20" 
+                     Grid.Row="0">
+
+            <!-- Arrows and Image -->
+            <StackLayout Orientation="Horizontal" 
+                         HorizontalOptions="Center" 
+                         VerticalOptions="Center"
+                         Spacing="50">
+                <!-- Left Arrow Button -->
+                <Button x:Name="LeftArrowButton"
+                        Text="←"
+                        FontSize="50"
+                        FontAttributes="Bold"
+                        TextColor="White"
+                        BackgroundColor="Black"
+                        Clicked="LeftArrowButton_Clicked"
+                        CornerRadius="10"
+                        Padding="20"/>
+
+                <!-- Image -->
+                <Image x:Name="BadGuyImage" 
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center" 
+                       WidthRequest="350" 
+                       HeightRequest="200"/>
+
+                <!-- Right Arrow Button -->
+                <Button x:Name="RightArrowButton"
+                        Text="→"
+                        FontSize="40"
+                        FontAttributes="Bold"
+                        TextColor="White"
+                        BackgroundColor="Black"
+                        CornerRadius="10"
+                        Clicked="RightArrowButton_Clicked"
+                        Padding="20"/>
+            </StackLayout>
+
+            <!-- Difficulty Label -->
+            <Label x:Name="DifficultyLabel"
+                   Text="Easy"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Center" />
+        </StackLayout>
+
+        <!-- Start Button at the bottom -->
+        <Button x:Name="NextButton" 
+         Text="Next " 
+         Clicked="OnNextClicked" 
+         HorizontalOptions="Center" 
+         Grid.Row="1"
+         WidthRequest="300"
+         HeightRequest="80"
+         CornerRadius="20"
+         BackgroundColor="Black"
+        TextColor="White"/>
+
+    </Grid>
+
+</ContentPage>
+

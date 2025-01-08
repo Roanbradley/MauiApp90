@@ -1,0 +1,47 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp90.PlayerSelectionPage"
+             BackgroundColor="Black"
+             Padding="30">
+
+    <StackLayout VerticalOptions="FillAndExpand" Spacing="20">
+
+        <!-- Label to guide user -->
+        <Label Text="Select the number of players:"
+               FontSize="24"
+               TextColor="White"
+               HorizontalOptions="Center"/>
+
+        <!-- Picker for selecting the number of players -->
+        <Picker x:Name="PlayerCountPicker"
+                SelectedIndexChanged="OnPlayerCountChanged"
+                HorizontalOptions="Center"
+                Title="Select Players">
+            <Picker.Items>
+                <x:String>1 Player</x:String>
+                <x:String>2 Players</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <!-- Centered Message -->
+        <Label x:Name="tag"
+               Text="Please select 2 players for a better experience"
+               FontSize="22"
+               FontAttributes="Bold"
+               TextColor="White"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand"
+               Margin="0,20" />
+
+        <!-- Next button to confirm selection -->
+        <Button Text="Next"
+                Clicked="OnNextClicked"
+                HorizontalOptions="Center"
+                BackgroundColor="Black"
+                TextColor="White"
+                WidthRequest="200"
+                HeightRequest="50"/>
+
+    </StackLayout>
+</ContentPage>
+    

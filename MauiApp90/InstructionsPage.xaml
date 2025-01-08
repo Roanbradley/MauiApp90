@@ -1,0 +1,60 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp90.InstructionsPage"
+             BackgroundColor="Black"
+             BackgroundImageSource="marvelback.jpg">
+
+    <AbsoluteLayout>
+        <!-- Main StackLayout that holds everything vertically -->
+        
+
+        <!-- ScrollView for instructions -->
+        <ScrollView
+            AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+            AbsoluteLayout.LayoutFlags="All">
+            <StackLayout Padding="20" Spacing="20" HorizontalOptions="CenterAndExpand">
+                <!-- Instructions TextBox -->
+                <Label x:Name="InstructionLabel"
+                       Text="Step 1: Press 'Let's Quiz!"
+                       FontSize="25"
+                       FontFamily="AntonRegular"
+                       TextColor="Black"
+                       HorizontalOptions="CenterAndExpand"
+                       LineBreakMode="WordWrap"
+                       VerticalTextAlignment="Start"
+                       Margin="0,250,-100,0"/>
+            </StackLayout>
+        </ScrollView>
+
+        <!-- 'Next' Button -->
+
+        <Button x:Name="NextButton"
+                Text="!"
+                FontSize="40"
+                BackgroundColor="Black"
+                TextColor="White"
+                FontAttributes="Bold"
+                CornerRadius="70"
+                WidthRequest="60"
+                HeightRequest="60"
+                AbsoluteLayout.LayoutBounds="0.85, 0.9, 300, 500" 
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                Clicked="NextButton_Clicked"/>
+
+            <!-- Home Button -->
+
+        <Button Text="H O M E"
+                    BackgroundColor="Red"
+                    TextColor="White"
+                        
+                    FontFamily="AntonRegular"
+                    CornerRadius="10"
+                    WidthRequest="200"
+                    HeightRequest="50"
+                     AbsoluteLayout.LayoutBounds="0.5, -0.2, 200, 1000" 
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    Clicked="OnBackclicked"/>
+    </AbsoluteLayout>
+</ContentPage>
+
+

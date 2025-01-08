@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp90.GamePage"
+             BackgroundColor="Black"
+             BackgroundImageSource="titan.jpg">
+             
+    <!-- Main Stack Layout -->
+    <StackLayout Padding="30" Spacing="20" VerticalOptions="FillAndExpand">
+
+        <!-- Leaderboard at the Top -->
+        <HorizontalStackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Spacing="60">
+            <!-- Player 1 Score -->
+            <Label x:Name="Player1ScoreLabel"
+                   Text="Score: 0"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <!-- Player 2 Score -->
+            <Label x:Name="Player2ScoreLabel"
+                   Text="Score: 0"
+                   FontSize="22"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+        </HorizontalStackLayout>
+
+        <!-- Spacer -->
+        <BoxView HeightRequest="30" />
+
+        <!-- Horizontal Layout for Player Details and Timer -->
+        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Spacing="30">
+
+            <!-- Player 1 Details -->
+            <StackLayout VerticalOptions="CenterAndExpand" Margin="0,0,250,0">
+                <Label x:Name="Player1Label"
+                       Text="Player 1"
+                       FontSize="28"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center" />
+
+                <Image x:Name="Player1ProfileImage"
+                       Source="ironmanpfp.jpg"  
+                       WidthRequest="100"
+                       HeightRequest="100"
+                       HorizontalOptions="Center" />
+
+                <Label x:Name="Player1LivesLabel"
+                       Text="❤️❤️❤️"
+                       FontSize="36"
+                       HorizontalOptions="Center" />
+            </StackLayout>
+
+            <!-- Center Timer and Letter Combination -->
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+                <!-- Letter Combination -->
+
+                <Frame BackgroundColor="Black"
+           BorderColor="Black"
+           WidthRequest="200"
+           HeightRequest="200"
+           CornerRadius="150"
+           HorizontalOptions="Center" 
+           VerticalOptions="Center"
+           Padding="10">
+
+                    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label x:Name="LetterLabel"
+                       Text="??"
+                       FontSize="40"
+                       TextColor="White"
+                       FontFamily="AntonRegular"
+                       HorizontalOptions="Center" 
+                       Margin="0, 15" />
+
+                <!-- Timer -->
+                <Label x:Name="TimerLabel"
+                       Text="timer"
+                       TextColor="White"
+                        FontFamily="AntonRegular"
+
+                       FontSize="24"
+                       HorizontalOptions="Center" 
+                       Margin="0, 15" />
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+            <!-- Player 2 Details -->
+            <StackLayout VerticalOptions="CenterAndExpand" Margin="250,0,0,0">
+                <Label x:Name="Player2Label"
+                       Text="Player 2"
+                       FontSize="28"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center" />
+
+                <Image x:Name="Player2ProfileImage"
+                       Source="drdoompfp.jpg"  
+                       WidthRequest="100"
+                       HeightRequest="100"
+                       HorizontalOptions="Center" />
+
+                <Label x:Name="Player2LivesLabel"
+                       Text="❤️❤️❤️"
+                       FontSize="36"
+                       HorizontalOptions="Center" />
+            </StackLayout>
+
+        </HorizontalStackLayout>
+
+        <!-- Spacer -->
+        <BoxView HeightRequest="30" />
+
+        <!-- Player Word Displays -->
+        <Label x:Name="PlayerWordLabel" 
+               Text="" 
+               FontSize="70"
+               TextColor="White"
+               FontFamily="AntonRegular"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               LineBreakMode="WordWrap"
+               Margin="0, 25, 0, 25"
+               IsVisible="True" />
+
+        <!-- Word Entry Box -->
+        <StackLayout VerticalOptions="End" Padding="15">
+            <Entry x:Name="WordEntry"
+                   TextChanged="WordEntry_TextChanged"  
+                   Placeholder=""
+                   Completed="WordEntry_Completed"
+                   HorizontalOptions="FillAndExpand" 
+                   FontSize="22"/>
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>
